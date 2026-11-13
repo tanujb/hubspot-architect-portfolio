@@ -1,0 +1,76 @@
+erDiagram
+    Company ||--o{ Subscription : has
+    Company ||--o{ Feature_Usage : generates
+    Company ||--o{ Onboarding_Ticket : tracks
+    Deal ||--|| Contract : governs
+    Contact ||--o{ Onboarding_Ticket : owns
+
+    Company {
+        string name
+        string domain
+        string industry
+        number annual_revenue
+        string lifecycle_stage
+        number mrr_total
+        number health_score
+        datetime createdate
+        datetime hs_lastmodifieddate
+    }
+
+    Subscription {
+        string hs_object_id PK
+        string plan_tier
+        string billing_cycle
+        number mrr
+        string status
+        date start_date
+        date renewal_date
+        datetime hs_lastmodifieddate
+    }
+
+    Feature_Usage {
+        string hs_object_id PK
+        date date
+        string feature_name
+        number usage_count
+        number unique_users
+        datetime hs_lastmodifieddate
+    }
+
+    Onboarding_Ticket {
+        string hs_object_id PK
+        string stage
+        string owner
+        date target_launch_date
+        number health_score
+        datetime hs_lastmodifieddate
+    }
+
+    Contract {
+        string hs_object_id PK
+        number contract_value
+        number term_months
+        boolean auto_renew
+        date signed_date
+        string pdf_attachment
+        datetime hs_lastmodifieddate
+    }
+
+    Deal {
+        string hs_object_id PK
+        string dealname
+        number amount
+        string dealstage
+        string pipeline
+        date closedate
+        datetime hs_lastmodifieddate
+    }
+
+    Contact {
+        string hs_object_id PK
+        string email
+        string firstname
+        string lastname
+        string lifecyclestage
+        datetime hs_lastmodifieddate
+    }

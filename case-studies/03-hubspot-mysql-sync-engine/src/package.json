@@ -1,0 +1,40 @@
+{
+  "name": "hubspot-mysql-sync-engine",
+  "version": "1.0.0",
+  "description": "Bidirectional sync engine between HubSpot CRM and MySQL database",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "jest --coverage",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "hubspot",
+    "mysql",
+    "sync",
+    "crm",
+    "integration",
+    "webhook"
+  ],
+  "author": "Tanuj Bhattacharya",
+  "license": "MIT",
+  "dependencies": {
+    "@hubspot/api-client": "^9.0.0",
+    "mysql2": "^3.6.0",
+    "p-limit": "^4.0.0",
+    "express": "^4.18.0",
+    "node-cron": "^3.0.0",
+    "prom-client": "^15.0.0",
+    "dotenv": "^16.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0",
+    "jest": "^29.0.0",
+    "eslint": "^8.0.0",
+    "supertest": "^6.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
